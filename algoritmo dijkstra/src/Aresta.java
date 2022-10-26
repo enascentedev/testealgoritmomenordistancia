@@ -5,8 +5,8 @@ public class Aresta {
   private Vertice destino;
 
   public Aresta(double peso, Vertice origem, Vertice destino) {
-    this.peso = peso;
-    this.origem = origem;
+    this.peso = peso; 
+    this.origem = origem; 
     this.destino = destino;
   }
 

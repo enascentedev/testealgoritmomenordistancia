@@ -21,7 +21,7 @@ public class Dijkstra {
   // Lista dos vertices que ainda nao foram visitados
   List<Vertice> naoVisitados = new ArrayList<Vertice>();
 
-  Double distancia = 0d;
+  Double distancia = .0; 
 
   // Algoritmo de Dijkstra
   public void encontrarMenorCaminhoDijkstra(
@@ -32,7 +32,7 @@ public class Dijkstra {
     menorCaminho.add(origem);
 
     // Colocando a distancias iniciais
-    for (int i = 0; i < grafo.getVertices().size(); i++) {
+    for (int i = 0; i < grafo.getVertices().size(); i++) {                // aqui ele monta os não visitados 
       // Vertice atual tem distancia zero, e todos os outros,
       // 9999("infinita")
       if (grafo.getVertices().get(i).getDescricao().equals(origem.getDescricao())) {
@@ -44,7 +44,7 @@ public class Dijkstra {
       this.naoVisitados.add(grafo.getVertices().get(i));
     }
 
-    // MUDAR PARA QUICK SORT
+    // MUDAR PARA QUICK SORT usar classe abstrata estudar
     Collections.sort(naoVisitados);
 
     // O algoritmo continua ate que todos os vertices sejam visitados
@@ -97,7 +97,7 @@ public class Dijkstra {
 
             if (vizinho == destino) {
               menorCaminho.add(vizinho);
-              distancia += vizinho.getDistancia();
+              distancia += vizinho.getDistancia(); // mesma coisa que distancia = distancia + vizinho
             }
           }
         }
@@ -120,6 +120,8 @@ public class Dijkstra {
     System.out.println(
         "Distância: " + distancia);
     System.out.println(
-        "Custo da viagem: $" + String.format("%.2f", distancia / 10 * 6.95));
+        "Custo da viagem: $" + String.format("%.2f", distancia / 10 * 6.95)); // format pra imprimir duas casas
+    System.out.println("Quantidade de cidades: " + menorCaminho.size());
+    System.out.println("Quantidade de saltos: " + (menorCaminho.size() - 1));
   }
 }

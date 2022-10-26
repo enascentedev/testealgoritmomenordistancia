@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class LerDoArquivo {
+public class LerDoArquivo2 {
 
   public static List<Vertice> lerGrafo(String nomeArquivo) {
     Grafo g = new Grafo();
@@ -50,7 +50,7 @@ public class LerDoArquivo {
                 mapa.put(vertices[i], vit);
 
                 Aresta ait = new Aresta(v, vit);
-                ait.setPeso(Double.parseDouble(pesoArestas[i - 1]));          //-1 por que vetor começa na posição 1 e tem que começar na zero
+                ait.setPeso(Double.parseDouble(pesoArestas[i - 1]));
                 arestasAtual.add(ait);
               }
               v.setVizinhos(vizinhosAtual);
@@ -78,7 +78,7 @@ public class LerDoArquivo {
     } catch (FileNotFoundException e) {
       System.out.println("Nao encontrou o arquivo");
       e.printStackTrace();
-    } catch (IOException e) { // catch tratamento de erros do readLine
+    } catch (IOException e) { // catch do readLine
       // TODO Auto-generated catch block
       e.printStackTrace();
     }
@@ -87,16 +87,16 @@ public class LerDoArquivo {
   }
 
   public static void main(String args[]) {
-    Grafo grafo = new Grafo();
+    Grafo teste = new Grafo();
 
-    grafo.setVertices(lerGrafo("cidades.txt"));
+    teste.setVertices(lerGrafo("cidades.txt"));
     Vertice origem = new Vertice();
     Vertice destino = new Vertice();
-    origem = grafo.encontrarVertice("Porto Alegre");
-    destino = grafo.encontrarVertice("Gramado");
+    origem = teste.encontrarVertice("Porto Alegre");
+    destino = teste.encontrarVertice("Gramado");
 
     Dijkstra algoritmo = new Dijkstra();
-    algoritmo.encontrarMenorCaminhoDijkstra(grafo, origem, destino);
+    algoritmo.encontrarMenorCaminhoDijkstra(teste, origem, destino);
 
   }
 }
