@@ -115,13 +115,32 @@ public class Dijkstra {
       // System.out.println("Nao foram visitados ainda:" + naoVisitados);
     }
 
-    System.out.println(
-        "Rota: " + menorCaminho);
-    System.out.println(
-        "Distância: " + distancia);
-    System.out.println(
-        "Custo da viagem: $" + String.format("%.2f", distancia / 10 * 6.95)); // format pra imprimir duas casas
-    System.out.println("Quantidade de cidades: " + menorCaminho.size());
-    System.out.println("Quantidade de saltos: " + (menorCaminho.size() - 1));
+ // System.out.println("Rota: " + menorCaminho);
+    // System.out.println("Quantidade de saltos: " + (menorCaminho.size() - 1));
+    // System.out.println("Distância: " + distancia);
+    // System.out.println(
+    //   "Custo da viagem: $" + String.format("%.2f", distancia / 10 * 6.95)
+    // );
+
+    StringBuilder texto = new StringBuilder();
+
+    texto.append("Menor rota encontrada: ");
+    texto.append("\n\n");
+    texto.append("Rota: ");
+    texto.append(menorCaminho);
+    texto.append("\n");
+    texto.append("Quantidade de saltos: ");
+    texto.append(menorCaminho.size() - 1);
+    texto.append("\n");
+    texto.append("Distância: ");
+    texto.append(distancia);
+    texto.append("Km");
+    texto.append("\n");
+    texto.append("Custo da viagem: $");
+    texto.append(String.format("%.2f", distancia / 10 * 6.95));
+
+    GravarNoArquivo.gravar(texto.toString());
+System.out.println( "Análise de menor rota executado com sucesso, resultado gravado no arquivo rota.txt"
+);
   }
 }
