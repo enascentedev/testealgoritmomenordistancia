@@ -133,7 +133,7 @@ public class Dijkstra {
     texto.append(menorCaminho.size() - 1);
     texto.append("\n");
     texto.append("Distância: ");
-    texto.append(distancia);
+    texto.append(String.format("%.2f",distancia));
     texto.append("Km");
     texto.append("\n");
     texto.append("Custo da viagem: $");
