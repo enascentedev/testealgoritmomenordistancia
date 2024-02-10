@@ -1,3 +1,7 @@
+## Projeto
+Este projeto pode ser usado para resolver problemas como encontrar a rota mais rápida entre cidades em um mapa rodoviário, usando dados fornecidos em arquivos. A execução começa com App.java, que organiza a leitura do mapa, executa o algoritmo para encontrar o caminho mais curto e pode salvar ou mostrar o resultado.
+
+
 ## Getting Started
 
 Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
